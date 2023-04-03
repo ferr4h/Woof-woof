@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Woof-woof</string>
+    <string name="walk_title">Выгул</string>
+    <string name="health_title">Здоровье</string>
+    <string name="home_title">Собака</string>
+    <string name="tools_title">Инструменты</string>
+    <string name="training_title">Обучение</string>
 </resources>
