@@ -15,8 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:bottomLeftRadius="16dp"
-            android:bottomRightRadius="16dp"
             android:src="@drawable/main_title_bg" />
 
         <TextView

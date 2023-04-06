@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,8 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:bottomLeftRadius="16dp"
-            android:bottomRightRadius="16dp"
             android:src="@drawable/main_title_bg" />
 
         <TextView
@@ -31,5 +30,41 @@
             android:textStyle="bold" />
 
     </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/toolsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/clicker_button"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttons_style"
+            android:text="@string/clicker"
+            app:layout_constraintEnd_toStartOf="@+id/whistle_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/whistle_button"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttons_style"
+            android:text="@string/whistle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/clicker_button"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
