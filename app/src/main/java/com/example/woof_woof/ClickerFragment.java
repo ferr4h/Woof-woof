@@ -11,25 +11,28 @@ import android.view.View;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
+import com.example.woof_woof.databinding.FragmentClickerBinding;
+
 public class ClickerFragment extends Fragment {
+
+    FragmentClickerBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_clicker, container, false);
-        ImageView imageView = view.findViewById(R.id.clicker);
+        binding = FragmentClickerBinding.inflate(inflater, container, false);
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext().getApplicationContext(), R.raw.click);
-        imageView.setOnTouchListener(new View.OnTouchListener() {
+        binding.clicker.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    imageView.setImageResource(R.drawable.clicker__click);
+                    binding.clicker.setImageResource(R.drawable.clicker__click);
                     mediaPlayer.start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    imageView.setImageResource(R.drawable.clicker);
+                    binding.clicker.setImageResource(R.drawable.clicker);
                 }
                 return true;
             }
         });
-        return view;
+        return binding.getRoot();
     }
 }

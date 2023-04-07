@@ -13,31 +13,32 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.woof_woof.databinding.FragmentToolsBinding;
+
 public class ToolsFragment extends Fragment {
+
+    FragmentToolsBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_tools, container, false);
-        Button setClickerButton = view.findViewById(R.id.clicker_button);
-        Button setWhistleButton = view.findViewById(R.id.whistle_button);
-
+        binding = FragmentToolsBinding.inflate(inflater, container, false);
         replaceTool(new ClickerFragment());
 
-        setClickerButton.setOnClickListener(new View.OnClickListener() {
+        binding.clickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceTool(new ClickerFragment());
             }
         });
 
-        setWhistleButton.setOnClickListener(new View.OnClickListener() {
+        binding.whistleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 replaceTool(new WhistleFragment());
             }
         });
-        return view;
+        return binding.getRoot();
     }
 
     public void replaceTool(Fragment fragment){

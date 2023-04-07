@@ -11,26 +11,29 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.woof_woof.databinding.FragmentWhistleBinding;
+
 
 public class WhistleFragment extends Fragment {
 
+    FragmentWhistleBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_whistle, container, false);
-        ImageView imageView = view.findViewById(R.id.whistle);
+        binding = FragmentWhistleBinding.inflate(inflater, container, false);
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext().getApplicationContext(), R.raw.whistle);
-        imageView.setOnTouchListener(new View.OnTouchListener() {
+        binding.whistle.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    imageView.setImageResource(R.drawable.svistok_act);
+                    binding.whistle.setImageResource(R.drawable.svistok_act);
                     mediaPlayer.start();
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    imageView.setImageResource(R.drawable.svistok_pas);
+                    binding.whistle.setImageResource(R.drawable.svistok_pas);
                 }
                 return true;
             }
         });
-        return view;
+        return binding.getRoot();
     }
 }
