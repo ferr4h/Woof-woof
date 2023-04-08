@@ -15,6 +15,6 @@
     </style>
     <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
         <item name="itemIconSize">50dp</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">8sp</item>
     </style>
 </resources>

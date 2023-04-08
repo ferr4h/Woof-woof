@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="@string/walk_title"
-        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:icon="@drawable/calendar"
         android:id="@+id/walk"/>
     <item android:title="@string/health_title"
-        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:icon="@drawable/krest"
         android:id="@+id/health"/>
     <item android:title="@string/home_title"
-        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:icon="@drawable/lapa"
         android:id="@+id/home"/>
     <item android:title="@string/tools_title"
-        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:icon="@drawable/svistok"
         android:id="@+id/tools"/>
     <item android:title="@string/training_title"
-        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:icon="@drawable/shlyapa"
         android:id="@+id/training"/>
 </menu>
