@@ -7,4 +7,14 @@
     <string name="training_title">Обучение</string>
     <string name="clicker">Кликер</string>
     <string name="whistle">Свисток</string>
+    <string name="change">Редактировать</string>
+    <string name="save">Сохранить</string>
+    <string name="name">Кличка</string>
+    <string name="age">Возраст</string>
+    <string name="breed">Порода</string>
+    <string name="sex">Пол</string>
+    <string name="years">Годы</string>
+    <string name="months">Месяца</string>
+    <string name="symbols_max_15">  максимум 15 символов</string>
+    <string name="symbols_max_30">  максимум 30 символов</string>
 </resources>

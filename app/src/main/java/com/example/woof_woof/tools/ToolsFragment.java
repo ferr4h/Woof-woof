@@ -1,18 +1,16 @@
-package com.example.woof_woof;
+package com.example.woof_woof.tools;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.widget.Button;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.woof_woof.R;
 import com.example.woof_woof.databinding.FragmentToolsBinding;
 
 public class ToolsFragment extends Fragment {

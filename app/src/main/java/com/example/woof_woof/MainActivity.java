@@ -3,6 +3,9 @@ package com.example.woof_woof;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.woof_woof.databinding.ActivityMainBinding;
+import com.example.woof_woof.home.HomeFragment;
+import com.example.woof_woof.tools.ToolsFragment;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;

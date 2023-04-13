@@ -1,4 +1,4 @@
-package com.example.woof_woof;
+package com.example.woof_woof.tools;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
+import com.example.woof_woof.R;
 import com.example.woof_woof.databinding.FragmentClickerBinding;
 
 public class ClickerFragment extends Fragment {
