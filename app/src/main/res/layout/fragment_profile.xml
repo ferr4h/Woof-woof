@@ -31,13 +31,14 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="260dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:rowCount="4"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,18 +46,20 @@
             android:text="@string/name"
             android:layout_row="0"
             android:layout_column="0"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginEnd="70dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
+            android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Борис"
+            android:textSize="18sp"
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -64,18 +67,20 @@
             android:text="@string/age"
             android:layout_row="1"
             android:layout_column="0"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginEnd="70dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
+            android:id="@+id/ageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3 года 10 месяцев"
             android:layout_row="1"
             android:layout_column="1"
-            android:layout_marginBottom="25dp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,20 +88,22 @@
             android:text="@string/breed"
             android:layout_row="2"
             android:layout_column="0"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginEnd="70dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
-            android:layout_width="125dp"
+            android:id="@+id/breedText"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="Американский стаффордширский йорктерьер"
             android:layout_row="2"
             android:layout_column="1"
+            android:textSize="18sp"
             android:breakStrategy="simple"
             android:hyphenationFrequency="none"
-            android:layout_marginBottom="25dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,25 +111,27 @@
             android:text="@string/sex"
             android:layout_row="3"
             android:layout_column="0"
-            android:textSize="17sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginEnd="70dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="40dp" />
 
         <TextView
+            android:id="@+id/sexText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="М"
+            android:textSize="20sp"
             android:layout_row="3"
             android:layout_column="1"
-            android:layout_marginBottom="25dp" />
+            android:layout_marginBottom="40dp" />
     </GridLayout>
 
     <Button
         android:id="@+id/changeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:text="@string/change"
         android:layout_gravity="center"
         android:background="@drawable/buttons_style"/>

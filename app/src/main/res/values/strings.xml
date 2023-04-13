@@ -14,7 +14,9 @@
     <string name="breed">Порода</string>
     <string name="sex">Пол</string>
     <string name="years">Годы</string>
-    <string name="months">Месяца</string>
-    <string name="symbols_max_15">  максимум 15 символов</string>
-    <string name="symbols_max_30">  максимум 30 символов</string>
+    <string name="months">Месяцы</string>
+    <string name="symbols_max_15">Максимум 15 символов</string>
+    <string name="symbols_max_30">Максимум 30 символов</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
 </resources>
