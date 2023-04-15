@@ -19,4 +19,6 @@
     <string name="symbols_max_30">Максимум 30 символов</string>
     <string name="male">Мужской</string>
     <string name="female">Женский</string>
+    <string name="submit_registration">Завершить регистрацию</string>
+    <string name="warning">Завершая регистрацию, я соглашаюсь с правилами пользования приложением и политикой конфиденциальности</string>
 </resources>
