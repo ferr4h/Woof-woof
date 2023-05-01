@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.woof_woof.databinding.FragmentRegistrationBinding;
-import com.example.woof_woof.home.FragmentChangeListener;
-import com.example.woof_woof.home.ProfileFragment;
 
 public class RegistrationFragment extends Fragment implements View.OnClickListener{
 

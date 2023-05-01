@@ -11,7 +11,10 @@
         android:layout_height="200dp"
         android:layout_gravity="top">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
             android:id="@+id/titleBackgroundImage"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -127,13 +130,16 @@
             android:layout_marginBottom="40dp" />
     </GridLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:textColor="@color/white"
         android:id="@+id/changeButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:textSize="12sp"
         android:layout_marginTop="40dp"
         android:text="@string/change"
         android:layout_gravity="center"
-        android:background="@drawable/buttons_style"/>
+        android:background="@drawable/buttons_style"
+        android:backgroundTint="@null"/>
 
 </LinearLayout>

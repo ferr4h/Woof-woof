@@ -8,7 +8,13 @@
     <string name="clicker">Кликер</string>
     <string name="whistle">Свисток</string>
     <string name="change">Редактировать</string>
+    <string name="notifications">Напоминания</string>
+    <string name="new_notification">Добавить напоминание</string>
+    <string name="choose_notification">Выберите тип напоминания:</string>
     <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="create">Создать</string>
+    <string name="back">Назад</string>
     <string name="name">Кличка</string>
     <string name="age">Возраст</string>
     <string name="breed">Порода</string>
@@ -21,4 +27,16 @@
     <string name="female">Женский</string>
     <string name="submit_registration">Завершить регистрацию</string>
     <string name="warning">Завершая регистрацию, я соглашаюсь с правилами пользования приложением и политикой конфиденциальности</string>
+    <string name="bath">Умывание</string>
+    <string name="vaccine">Привика</string>
+    <string name="vet">Ветеринар</string>
+    <string name="ear">Чистка ушей</string>
+    <string name="tooth">Чистка зубов</string>
+    <string name="worm">От глистов</string>
+    <string name="scissors">Груминг</string>
+    <string name="mite">От клещей</string>
+    <string name="date">Дата</string>
+    <string name="time">Время</string>
+    <string name="description">Описание</string>
+
 </resources>

@@ -11,12 +11,15 @@
         android:layout_height="100dp"
         android:layout_gravity="top">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
             android:id="@+id/titleBackgroundImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/main_title_bg" />
+            android:src="@drawable/main_title_bg"/>
 
         <TextView
             android:id="@+id/title"
@@ -44,22 +47,24 @@
         android:layout_height="100dp"
         android:layout_gravity="bottom">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/white"
             android:id="@+id/clicker_button"
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:background="@drawable/buttons_style"
+            android:background="@drawable/gradient_green"
             android:text="@string/clicker"
             app:layout_constraintEnd_toStartOf="@+id/whistle_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:textColor="@color/white"
             android:id="@+id/whistle_button"
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:background="@drawable/buttons_style"
+            android:background="@drawable/gradient_blue"
             android:text="@string/whistle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

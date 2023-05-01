@@ -1,4 +1,4 @@
-package com.example.woof_woof.home;
+package com.example.woof_woof.health;
 
 import android.os.Bundle;
 
@@ -12,19 +12,24 @@ import android.view.ViewGroup;
 
 import com.example.woof_woof.FragmentChangeListener;
 import com.example.woof_woof.R;
+import com.example.woof_woof.databinding.FragmentHealthBinding;
 import com.example.woof_woof.databinding.FragmentHomeBinding;
+import com.example.woof_woof.home.ProfileFragment;
 
-public class HomeFragment extends Fragment implements FragmentChangeListener {
 
-    FragmentHomeBinding binding;
+public class HealthFragment extends Fragment implements FragmentChangeListener {
+
+    FragmentHealthBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        replaceFragment(new ProfileFragment());
+        binding=FragmentHealthBinding.inflate(inflater,  container, false);
+        replaceFragment(new NotificationsFragment());
         return binding.getRoot();
     }
-    public void replaceFragment(Fragment fragment){
+
+    @Override
+    public void replaceFragment(Fragment fragment) {
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragmentLayout, fragment);

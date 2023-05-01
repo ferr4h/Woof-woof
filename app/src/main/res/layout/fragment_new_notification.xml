@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".health.NewNotificationFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="top">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:id="@+id/titleBackgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_title_bg" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/new_notification"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_notification"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/bathButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/bath"
+            app:icon="@drawable/bath"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/gradient_red" />
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/vaccineButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/vaccine"
+            app:icon="@drawable/vaccine"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/gradient_blue"/>
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/scissorsButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/scissors"
+            app:icon="@drawable/scissors"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/gradient_yellow"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/miteButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/mite"
+            app:icon="@drawable/mite"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/gradient_green"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/wormButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/worm"
+            app:icon="@drawable/worm"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/gradient_blue"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/earButton"
+            app:iconSize="55dp"
+            android:text="@string/ear"
+            app:icon="@drawable/ear"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:width="100dp"
+            android:height="100dp"
+            android:background="@drawable/gradient_red" />
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/vetButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/vet"
+            app:icon="@drawable/vet"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:background="@drawable/gradient_green"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:backgroundTint="@null"
+            android:id="@+id/toothButton"
+            android:width="100dp"
+            android:height="100dp"
+            app:iconSize="55dp"
+            android:text="@string/tooth"
+            app:icon="@drawable/tooth"
+            app:iconGravity="textTop"
+            android:textSize="7sp"
+            app:iconPadding="8dp"
+            android:paddingTop="8dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/gradient_yellow"
+            android:layout_marginTop="10dp"/>
+
+    </GridLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:textColor="@color/white"
+        android:id="@+id/cancelButton"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:text="@string/cancel"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textSize="12dp"
+        android:background="@drawable/grey_button"/>
+
+
+</LinearLayout>

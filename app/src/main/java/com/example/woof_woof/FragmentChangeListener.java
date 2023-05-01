@@ -1,4 +1,4 @@
-package com.example.woof_woof.home;
+package com.example.woof_woof;
 
 import androidx.fragment.app.Fragment;
 

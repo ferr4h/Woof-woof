@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.woof_woof.databinding.ActivityMainBinding;
+import com.example.woof_woof.health.HealthFragment;
 import com.example.woof_woof.home.HomeFragment;
 import com.example.woof_woof.tools.ToolsFragment;
 

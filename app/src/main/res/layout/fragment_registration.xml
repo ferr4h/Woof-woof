@@ -149,10 +149,12 @@
 
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:textColor="@color/white"
         android:id="@+id/submitButton"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:textSize="12sp"
         android:layout_gravity="center"
         android:layout_marginTop="45dp"
         android:background="@drawable/buttons_style"

@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HealthFragment">
+    tools:context=".health.HealthFragment">
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/fragmentLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="top">
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-        <ImageView
-            android:id="@+id/titleBackgroundImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/main_title_bg" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/health_title"
-            android:textColor="@color/white"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
-
-    </RelativeLayout>
-
-</FrameLayout>
+</RelativeLayout>
