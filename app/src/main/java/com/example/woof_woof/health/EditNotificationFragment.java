@@ -2,60 +2,57 @@ package com.example.woof_woof.health;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.woof_woof.FragmentChangeListener;
 import com.example.woof_woof.R;
-import com.example.woof_woof.databinding.FragmentAddNotificationBinding;
-import com.example.woof_woof.databinding.FragmentNewNotificationBinding;
+import com.example.woof_woof.databinding.FragmentEditNotificationBinding;
 
-public class AddNotificationFragment extends Fragment implements View.OnClickListener{
+public class EditNotificationFragment extends Fragment implements View.OnClickListener{
 
-    FragmentAddNotificationBinding binding;
-    String notificationType;
+    FragmentEditNotificationBinding binding;
+    String id, type, dayInput, monthInput, hoursInput, minutesInput, descriptionInput;
     FragmentChangeListener fc;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            notificationType = getArguments().getString("notificationType");
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentAddNotificationBinding.inflate(inflater, container, false);
+        binding=FragmentEditNotificationBinding.inflate(inflater, container, false);
         fc = (FragmentChangeListener) getParentFragment();
-        binding.title.setText(notificationType);
-        binding.createButton.setOnClickListener(this);
-        binding.backButton.setOnClickListener(this);
+        getData();
         return binding.getRoot();
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.createButton:
+            case R.id.updateButton:
                 validateAndSave();
                 break;
-            case R.id.backButton:
-                fc.replaceFragment(new NewNotificationFragment());
+            case R.id.deleteButton:
+                fc.replaceFragment(new NotificationsFragment());
                 break;
         }
     }
+    void getData(){
+        binding.dayUpd.setText(dayInput);
+        binding.monthUpd.setText(monthInput);
+        binding.hoursUpd.setText(hoursInput);
+        binding.minutesUpd.setText(minutesInput);
+        binding.descriptionUpd.setText(descriptionInput);
+    }
     private void validateAndSave() {
-        String dayStr = binding.day.getText().toString().trim();
-        String monthStr = binding.month.getText().toString().trim();
-        String hoursStr = binding.hours.getText().toString().trim();
-        String minutesStr = binding.minutes.getText().toString().trim();
-        String description = binding.description.getText().toString().trim();
+
+        String dayStr = binding.dayUpd.getText().toString().trim();
+        String monthStr = binding.monthUpd.getText().toString().trim();
+        String hoursStr = binding.hoursUpd.getText().toString().trim();
+        String minutesStr = binding.minutesUpd.getText().toString().trim();
+        String description = binding.descriptionUpd.getText().toString().trim();
 
         if (dayStr.isEmpty() || monthStr.isEmpty() || hoursStr.isEmpty() || minutesStr.isEmpty()) {
             Toast.makeText(getActivity(), "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show();
@@ -81,7 +78,8 @@ public class AddNotificationFragment extends Fragment implements View.OnClickLis
         }
 
         NotificationsDatabase db = new NotificationsDatabase(getContext());
-        db.addNotification(notificationType,
+        db.updateData(id,
+                type,
                 formattedDay + "." + formattedMonth,
                 formattedHours + ":" + formattedMinutes,
                 description);

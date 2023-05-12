@@ -4,57 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".health.AddNotificationFragment">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="top">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:shapeAppearanceOverlay="@style/roundedImageView"
-            android:id="@+id/titleBackgroundImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/main_title_bg" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/new_notification"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold"/>
-
-    </RelativeLayout>
+    tools:context=".health.EditNotificationFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="25dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="22dp"
+            android:textColor="@color/blue"
+            android:text="@string/vet"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="@string/date"/>
-        
+
         <LinearLayout
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="6dp">
 
             <EditText
-                android:id="@+id/day"
+                android:id="@+id/day_upd"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
@@ -72,7 +53,7 @@
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/month"
+                android:id="@+id/month_upd"
                 android:layout_marginStart="3dp"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
@@ -89,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="@string/time"/>
 
         <LinearLayout
@@ -98,7 +79,7 @@
             android:layout_marginTop="6dp">
 
             <EditText
-                android:id="@+id/hours"
+                android:id="@+id/hours_upd"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:textAlignment="center"
@@ -115,7 +96,7 @@
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/minutes"
+                android:id="@+id/minutes_upd"
                 android:layout_marginStart="3dp"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
@@ -131,11 +112,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="@string/description"/>
 
         <EditText
-            android:id="@+id/description"
+            android:id="@+id/description_upd"
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="6dp"
@@ -153,10 +134,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:textColor="@color/white"
-        android:id="@+id/createButton"
+        android:id="@+id/updateButton"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:text="@string/create"
+        android:text="@string/save"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:textSize="12dp"
@@ -164,13 +145,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:textColor="@color/white"
-        android:id="@+id/backButton"
+        android:id="@+id/deleteButton"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:text="@string/back"
+        android:text="@string/delete"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:textSize="12dp"
-        android:background="@drawable/grey_button"/>
+        android:background="@drawable/red_button" />
 
 </LinearLayout>

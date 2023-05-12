@@ -32,12 +32,6 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
         super.onViewCreated(view, savedInstanceState);
 
         sharedPreferences = getActivity().getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        String imageUri = sharedPreferences.getString("PROFILE_IMAGE_URI", "");
-
-        //if (!imageUri.isEmpty()) {
-            //binding.profileImage.setImageURI(Uri.parse(imageUri));
-            //binding.profileImage.setImageBitmap(getCircleBitmap(binding.profileImage));
-        //}
     }
 
     @Override
@@ -56,9 +50,6 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
                 break;
             case R.id.backArrow:
                 goBack();
-                break;
-            case R.id.profileImage:
-                chooseImageFromGallery();
                 break;
         }
     }
@@ -106,31 +97,6 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
     public void goBack(){
         FragmentChangeListener fc = (FragmentChangeListener) getParentFragment();
         fc.replaceFragment(new ProfileFragment());
-    }
-
-    private static final int RESULT_LOAD_IMAGE = 1;
-
-    private void chooseImageFromGallery() {
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-            Uri selectedImage = data.getData();
-            binding.profileImage.setImageURI(selectedImage);
-
-            saveImageUri(selectedImage);
-        }
-    }
-    private void saveImageUri(Uri imageUri) {
-        sharedPreferences = getActivity().getSharedPreferences("user_data", Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        editor.putString("PROFILE_IMAGE_URI", imageUri.toString());
-        editor.apply();
     }
 
 }

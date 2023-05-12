@@ -9,6 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="menu_background">#121111</color>
     <color name="menu_checked">#019E01</color>
-    <color name="clicker_button">#346e2e</color>
-    <color name="whistle_button">#31347a</color>
+    <color name="green">#346e2e</color>
+    <color name="blue">#31347a</color>
 </resources>

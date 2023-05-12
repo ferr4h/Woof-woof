@@ -14,6 +14,7 @@
     <string name="save">Сохранить</string>
     <string name="cancel">Отменить</string>
     <string name="create">Создать</string>
+    <string name="delete">Удалить</string>
     <string name="back">Назад</string>
     <string name="name">Кличка</string>
     <string name="age">Возраст</string>
@@ -38,5 +39,6 @@
     <string name="date">Дата</string>
     <string name="time">Время</string>
     <string name="description">Описание</string>
-
+    <string name="when">Когда:</string>
+    <string name="description1">Описание:</string>
 </resources>
