@@ -24,4 +24,11 @@
         <item name="cornerSizeBottomRight">30dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
+    <style name="CalendarTextStyle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="CalendarView" parent="@android:style/Widget.CalendarView">
+        <item name="android:datePickerMode">calendar</item>
+        <item name="android:selectedWeekBackgroundColor">#346e2e</item>
+    </style>
 </resources>

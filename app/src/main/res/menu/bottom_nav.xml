@@ -13,7 +13,4 @@
     <item android:title="@string/tools_title"
         android:icon="@drawable/svistok"
         android:id="@+id/tools"/>
-    <item android:title="@string/training_title"
-        android:icon="@drawable/shlyapa"
-        android:id="@+id/training"/>
 </menu>

@@ -1,19 +1,15 @@
 package com.example.woof_woof.health;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.woof_woof.FragmentChangeListener;
-import com.example.woof_woof.MainActivity;
 import com.example.woof_woof.R;
 
 import java.util.ArrayList;
@@ -22,28 +18,22 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
 
     private Context context;
     private ArrayList nt_id, nt_type, nt_date, nt_time, nt_description;
-    AdapterView.OnItemClickListener mListener;
-
-    public interface OnItemClickListener {
-        void onItemClick(int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        mListener = listener;
-    }
+    private OnNotificationClickListener onNotificationClickListener;
 
     NotificationsAdapter(Context context,
                          ArrayList nt_id,
                          ArrayList nt_type,
                          ArrayList nt_date,
                          ArrayList nt_time,
-                         ArrayList nt_description){
+                         ArrayList nt_description,
+                         OnNotificationClickListener onNotificationClickListener){
         this.context=context;
         this.nt_id=nt_id;
         this.nt_type=nt_type;
         this.nt_date=nt_date;
         this.nt_time=nt_time;
         this.nt_description=nt_description;
+        this.onNotificationClickListener = onNotificationClickListener;
     }
 
     @NonNull
@@ -76,6 +66,19 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
             nt_type_txt=itemView.findViewById(R.id.type_txt);
             nt_when_txt=itemView.findViewById(R.id.when_txt);
             nt_description_txt=itemView.findViewById(R.id.description_txt);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
+
+            mainLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onNotificationClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onNotificationClickListener.onNotificationClicked(position);
+                        }
+                    }
+                }
+            });
 
         }
     }

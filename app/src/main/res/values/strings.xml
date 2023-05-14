@@ -41,4 +41,7 @@
     <string name="description">Описание</string>
     <string name="when">Когда:</string>
     <string name="description1">Описание:</string>
+    <string name="no_notifications">Напоминаний пока нет</string>
+    <string name="walks">Выгулы</string>
+
 </resources>

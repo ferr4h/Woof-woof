@@ -82,4 +82,13 @@ public class NotificationsDatabase extends SQLiteOpenHelper {
             Toast.makeText(context, "Данные успешно обновлены", Toast.LENGTH_SHORT).show();
         }
     }
+    void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if (result == -1){
+            Toast.makeText(context, "Не получилось удалить напоминание", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Напоминание удалено", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

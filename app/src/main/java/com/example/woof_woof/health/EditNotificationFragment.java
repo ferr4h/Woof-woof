@@ -1,7 +1,10 @@
 package com.example.woof_woof.health;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -21,10 +24,28 @@ public class EditNotificationFragment extends Fragment implements View.OnClickLi
     FragmentChangeListener fc;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            id = getArguments().getString("nt_id");
+            type = getArguments().getString("nt_type");
+            String[] dateParts = getArguments().getString("nt_date").split("\\.");
+            dayInput = dateParts[0];
+            monthInput = dateParts[1];
+            String[] timeParts = getArguments().getString("nt_time").split(":");
+            hoursInput = timeParts[0];
+            minutesInput = timeParts[1];
+            descriptionInput = getArguments().getString("nt_description");
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding=FragmentEditNotificationBinding.inflate(inflater, container, false);
         fc = (FragmentChangeListener) getParentFragment();
-        getData();
+        setData();
+        binding.updateButton.setOnClickListener(this);
+        binding.deleteButton.setOnClickListener(this);
         return binding.getRoot();
     }
 
@@ -35,11 +56,12 @@ public class EditNotificationFragment extends Fragment implements View.OnClickLi
                 validateAndSave();
                 break;
             case R.id.deleteButton:
-                fc.replaceFragment(new NotificationsFragment());
+                delete();
                 break;
         }
     }
-    void getData(){
+    void setData(){
+
         binding.dayUpd.setText(dayInput);
         binding.monthUpd.setText(monthInput);
         binding.hoursUpd.setText(hoursInput);
@@ -83,6 +105,11 @@ public class EditNotificationFragment extends Fragment implements View.OnClickLi
                 formattedDay + "." + formattedMonth,
                 formattedHours + ":" + formattedMinutes,
                 description);
+        fc.replaceFragment(new NotificationsFragment());
+    }
+    private void delete(){
+        NotificationsDatabase db = new NotificationsDatabase(getContext());
+        db.deleteOneRow(id);
         fc.replaceFragment(new NotificationsFragment());
     }
 }
