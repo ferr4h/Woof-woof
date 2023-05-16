@@ -36,7 +36,7 @@
 
     <LinearLayout
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/walks"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="15dp"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -54,17 +54,156 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/plus"
-            android:layout_marginStart="210dp"/>
+            android:layout_marginStart="200dp"/>
 
     </LinearLayout>
 
-    <CalendarView
-        android:id="@+id/calendar"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/calendar_style"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Дата"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/empty_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/street"
+                android:alpha="0.2"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/empty_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textSize="17sp"
+                android:text="@string/no_walks"
+                android:textStyle="bold"
+                android:alpha="0.5"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/recommendation"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:alpha="0.8"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/calendar_style"
-        android:dateTextAppearance="@style/CalendarTextStyle"
-        android:weekDayTextAppearance="@style/CalendarTextStyle" />
+        android:layout_marginStart="40dp">
+
+        <TextView
+            android:id="@+id/recommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="240 мин/день"
+            android:textColor="@color/black"
+            android:alpha="0.8"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/footprints"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/you_walked"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:alpha="0.8"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:progressDrawable="@drawable/progress_bar_style"/>
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="90 мин. / 240 мин."
+        android:textColor="#4542e1"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
+        android:textSize="14sp"/>
+
 
 </LinearLayout>

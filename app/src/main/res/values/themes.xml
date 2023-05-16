@@ -9,9 +9,7 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
     <style name="BottomNavigationStyle" parent="Widget.Design.BottomNavigationView">
         <item name="itemIconSize">50dp</item>
@@ -24,11 +22,8 @@
         <item name="cornerSizeBottomRight">30dp</item>
         <item name="cornerFamily">rounded</item>
     </style>
-    <style name="CalendarTextStyle">
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <style name="CalendarView" parent="@android:style/Widget.CalendarView">
-        <item name="android:datePickerMode">calendar</item>
-        <item name="android:selectedWeekBackgroundColor">#346e2e</item>
+    <style name="dialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
     </style>
 </resources>

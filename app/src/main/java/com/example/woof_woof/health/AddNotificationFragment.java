@@ -62,15 +62,15 @@ public class AddNotificationFragment extends Fragment implements View.OnClickLis
             return;
         }
 
+        if (dayStr.length()<2 || monthStr.length()<2 || hoursStr.length()<2 || minutesStr.length()<2){
+            Toast.makeText(getActivity(), "Поля должны быть заполнены в фромате DD/MM и HH/MM", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         int day = Integer.parseInt(dayStr);
         int month = Integer.parseInt(monthStr);
         int hours = Integer.parseInt(hoursStr);
         int minutes = Integer.parseInt(minutesStr);
-
-        String formattedDay = String.format("%02d", day);
-        String formattedMonth = String.format("%02d", month);
-        String formattedHours = String.format("%02d", hours);
-        String formattedMinutes = String.format("%02d", minutes);
 
         if (day > 31 || day < 1 ||
                 month > 12 || month < 1 ||
@@ -82,8 +82,8 @@ public class AddNotificationFragment extends Fragment implements View.OnClickLis
 
         NotificationsDatabase db = new NotificationsDatabase(getContext());
         db.addNotification(notificationType,
-                formattedDay + "." + formattedMonth,
-                formattedHours + ":" + formattedMinutes,
+                dayStr + "." + monthStr,
+                hoursStr + ":" + minutesStr,
                 description);
         fc.replaceFragment(new NotificationsFragment());
     }

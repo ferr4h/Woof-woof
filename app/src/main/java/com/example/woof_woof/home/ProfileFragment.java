@@ -41,11 +41,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         binding.ageText.setText("Годы "+years+"  Месяцы " + months);
         binding.breedText.setText(sharedPreferences.getString("BREED", "Американский стаффордширский йорктерьер"));
         binding.sexText.setText(sharedPreferences.getString("SEX", "M"));
-        String imageUri = sharedPreferences.getString("PROFILE_IMAGE_URI", "");
-        /*if (!imageUri.isEmpty()) {
-           binding.profileImage.setImageURI(Uri.parse(imageUri));
-           binding.profileImage.setImageBitmap(getCircleBitmap(binding.profileImage));
-        }*/
     }
 
 }

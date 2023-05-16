@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.woof_woof.FragmentChangeListener;
@@ -30,7 +31,6 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         sharedPreferences = getActivity().getSharedPreferences("user_data", Context.MODE_PRIVATE);
     }
 
@@ -40,6 +40,7 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
         binding.saveButton.setOnClickListener(this);
         binding.backArrow.setOnClickListener(this);
         binding.profileImage.setOnClickListener(this);
+        setData();
         return binding.getRoot();
     }
     @Override
@@ -97,6 +98,17 @@ public class ChangeProfileFragment extends Fragment implements View.OnClickListe
     public void goBack(){
         FragmentChangeListener fc = (FragmentChangeListener) getParentFragment();
         fc.replaceFragment(new ProfileFragment());
+    }
+
+    void setData(){
+        sharedPreferences=getActivity().getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        binding.nameField.setText(sharedPreferences.getString("NAME", "Борис"));
+        binding.breedField.setText(sharedPreferences.getString("BREED", "Американский стаффордширский йорктерьер"));
+        binding.yearsField.setText(sharedPreferences.getString("YEARS", "3"));
+        binding.monthsField.setText(sharedPreferences.getString("MONTHS", "10"));
+        String sex = sharedPreferences.getString("SEX", "M");
+        if (sex=="M") binding.rbMale.setChecked(true);
+        else if(sex=="F") binding.rbFemale.setChecked(true);
     }
 
 }
