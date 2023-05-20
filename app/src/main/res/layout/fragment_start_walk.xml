@@ -34,4 +34,66 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/circle"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Сегодня"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:alpha="0.8"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/start_button"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:background="@drawable/buttons_style"
+        android:layout_gravity="center"
+        android:text="@string/to_walk"
+        android:textColor="@color/white"
+        android:layout_marginTop="35dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_button"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:background="@drawable/grey_button"
+        android:layout_gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"/>
+
 </LinearLayout>

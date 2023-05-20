@@ -1,7 +1,6 @@
 package com.example.woof_woof.walk;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -14,15 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.transition.Slide;
-import android.view.Gravity;
-import android.widget.LinearLayout;
+import android.view.Gravity;;
 
 import com.example.woof_woof.FragmentChangeListener;
 import com.example.woof_woof.R;
 import com.example.woof_woof.databinding.FragmentWalkCalendarBinding;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import android.animation.ObjectAnimator;
+import android.animation.TimeInterpolator;
+import android.view.animation.DecelerateInterpolator;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,7 +55,7 @@ public class WalkCalendarFragment extends Fragment {
         recyclerView.setAdapter(walksAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         setRecommendation();
-        setProgress();
+        setProgressAndAnimate();
         return binding.getRoot();
     }
     @Override
@@ -72,7 +72,7 @@ public class WalkCalendarFragment extends Fragment {
         Cursor cursor = db.readData();
         if (cursor.getCount()==0){ } else{
             while (cursor.moveToNext()){
-                if (cursor.getString(1)==date){
+                if (cursor.getString(1).equals(date)){
                     wk_id.add(cursor.getString(0));
                     wk_time.add(cursor.getString(2)+" - "+cursor.getString(3));
                     String duration = cursor.getString(4);
@@ -101,9 +101,12 @@ public class WalkCalendarFragment extends Fragment {
         binding.recommendation.setText(recommendedTime + " мин/день");
     }
 
-    void setProgress(){
-        binding.progressBar.setProgress(actualTime);
+    void setProgressAndAnimate(){
         binding.progressBar.setMax(recommendedTime);
+        ObjectAnimator animation = ObjectAnimator.ofInt(binding.progressBar, "progress", actualTime);
+        animation.setDuration(1000);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
         binding.progressText.setText(actualTime + " мин. / "+recommendedTime+" мин.");
     }
 

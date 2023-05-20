@@ -30,7 +30,7 @@
     <string name="submit_registration">Завершить регистрацию</string>
     <string name="warning">Завершая регистрацию, я соглашаюсь с правилами пользования приложением и политикой конфиденциальности</string>
     <string name="bath">Умывание</string>
-    <string name="vaccine">Привика</string>
+    <string name="vaccine">Прививка</string>
     <string name="vet">Ветеринар</string>
     <string name="ear">Чистка ушей</string>
     <string name="tooth">Чистка зубов</string>
@@ -50,7 +50,9 @@
     <string name="you_walked">Вы нагуляли:</string>
     <string name="add_walk">Добавить выгул вручную</string>
     <string name="start_walk">Начать выгул сейчас</string>
+    <string name="stop_walk">Все! Нагулялись!</string>
     <string name="start">Начало</string>
     <string name="end">Конец</string>
+    <string name="to_walk">Начать</string>
 
 </resources>

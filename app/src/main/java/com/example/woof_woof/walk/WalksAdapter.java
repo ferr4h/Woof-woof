@@ -35,7 +35,7 @@ public class WalksAdapter extends RecyclerView.Adapter<WalksAdapter.WkViewHolder
     @Override
     public void onBindViewHolder(@NonNull WalksAdapter.WkViewHolder holder, int position) {
         holder.wk_time_txt.setText(String.valueOf(wk_time.get(position)));
-        holder.wk_duration_txt.setText(String.valueOf(wk_duration.get(position)));
+        holder.wk_duration_txt.setText("Продолжительность: " + wk_duration.get(position) + " м.");
     }
 
     @Override
