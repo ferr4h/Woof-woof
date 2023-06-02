@@ -1,5 +1,8 @@
 package com.example.woof_woof.health;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -14,6 +17,8 @@ import com.example.woof_woof.FragmentChangeListener;
 import com.example.woof_woof.R;
 import com.example.woof_woof.databinding.FragmentAddNotificationBinding;
 import com.example.woof_woof.databinding.FragmentNewNotificationBinding;
+
+import java.util.Objects;
 
 public class AddNotificationFragment extends Fragment implements View.OnClickListener{
 
@@ -85,6 +90,21 @@ public class AddNotificationFragment extends Fragment implements View.OnClickLis
                 dayStr + "." + monthStr,
                 hoursStr + ":" + minutesStr,
                 description);
+        createNotificationChannel();
+        NotificationScheduler.scheduleNotification(requireContext(), notificationType, day, month, hours, minutes);
         fc.replaceFragment(new NotificationsFragment());
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "default";
+            String description = "Default channel for notifications";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("default", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = requireActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
